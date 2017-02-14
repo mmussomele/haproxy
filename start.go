@@ -43,7 +43,9 @@ func runHAProxy() error {
 func buildHAProxyConfig(addrs []string) string {
 	var lines []string
 	for i, addr := range addrs {
-		lines = append(lines, fmt.Sprintf("    server %d %s check", i, addr))
+		lines = append(lines,
+			fmt.Sprintf("    server %d %s check resolvers dns", i, addr))
+
 	}
 
 	return strings.Join(lines, "\n")
