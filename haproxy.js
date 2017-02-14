@@ -1,5 +1,4 @@
 var image = "quilt/haproxy";
-var cfg = "/usr/local/etc/haproxy/haproxy.cfg";
 
 function Haproxy(n, services, port) {
     services = Array.isArray(services) ? services : [services];
